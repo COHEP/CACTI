@@ -1,6 +1,6 @@
-# Scripts Zabbix
+# Scripts CACTI
 
-Coleção dos scripts utilizados no servidor zabbix.cat.cbpf.br
+Coleção dos scripts utilizados no servidor cacti.cat.cbpf.br
 
 ## Getting Started
 
@@ -8,26 +8,26 @@ Siga as instruções para ter os scrips rodando no servidor
 
 ### Prerequisites
 
-Server com o Zabbix
+Server com o CACTI
 
 ### Installing
 ```
 mkdir /root/scritps
 cd /root/scritps
-git clone ssh://git@gitlab.cern.ch:7999/esilvaju/CBPF-zabbix.git
+git clone ssh://git@gitlab.cern.ch:7999/esilvaju/CBPF-SE.git
 ```
 ## Scripts
 ```
-backup-zabbix.sh
-zabbix-mysql-dump.sh
+backup-cacti.sh
+restore-mysql.sh
 ```
 
-### Backup Zabbix
-Realiza o dump do banco e envia para focus19.
+### Backup CACTI
+Realiza o backup do diretorio de HTML, RRD e dump do banco.
 
 Está agendado na crontab da seguinte maneira:
 ```
-0 0 */5 * * /root/scripts/backup-zabbix.sh >/dev/null 2>&1
+0 0 */5 * * /root/scripts/backup-cacti.sh >/dev/null 2>&1
 ```
 ### Restore mysql
 Verificar o conteudo do script para maiores informações
